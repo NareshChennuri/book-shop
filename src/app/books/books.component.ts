@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { Book } from '../book';
-import { BookService } from '../book.service';
+import {Book} from '../book';
+import {BookService} from '../book.service';
 
 @Component({
   selector: 'app-books',
@@ -10,30 +10,41 @@ import { BookService } from '../book.service';
 })
 export class BooksComponent implements OnInit {
   books: Book[];
+  displayBooks: Book[];
+  booksCount = 0;
+  pageIndex = 0;
+  pageSize = 5;
+  pageSizeOptions = [5, 10, 25, 100];
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService) {
+  }
 
   ngOnInit() {
     this.getBooks();
   }
 
-  getBooks(): void {
-    this.bookService.getBooks()
-    .subscribe(books => this.books = books);
+  getBooksFromTo(pageIndex: number, pageSize: number): void {
+    const from: number = (pageIndex > 1) ? pageIndex * pageSize : (pageIndex === 1) ? pageSize : pageIndex;
+    const to: number = from + pageSize;
+    this.displayBooks = this.books.slice(from, to);
   }
 
-  add(title: string): void {
-    title = title.trim();
-    if (!title) { return; }
-    this.bookService.addBook({ title } as Book)
-      .subscribe(book => {
-        this.books.push(book);
+  getBooks(): void {
+    this.bookService.getBooks()
+      .subscribe(books => {
+        // sort books in ASC order by its title
+        books.sort(function (a, b) {
+          return (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0);
+        });
+        this.books = books;
+        this.booksCount = books.length;
+        this.getBooksFromTo(this.pageIndex, this.pageSize);
       });
   }
 
-  delete(book: Book): void {
-    this.books = this.books.filter(h => h !== book);
-    this.bookService.deleteBook(book).subscribe();
+  pageChanged(event): void {
+    const pageSize: number = event.pageSize;
+    const pageIndex: number = event.pageIndex;
+    this.getBooksFromTo(pageIndex, pageSize);
   }
-
 }
