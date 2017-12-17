@@ -11,3 +11,7 @@
     width: 90% !important;
   }
 }
+
+.example-full-width {
+  width: 100%;
+}

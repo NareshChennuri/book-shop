@@ -1,28 +1,22 @@
 <div class="continer">
-  <div *ngIf="book">
-    <h2>{{ book.title | uppercase }} || Details</h2>
-    <div><span>id: </span>{{book.id}}</div>
-    <div>
-      <label>Title:
-        <input [(ngModel)]="book.title" placeholder="title"/>
-      </label>
+  <div class="card" style="padding:30px;">
+    <div *ngIf="book">
+      <div class="row">
+        <div class="col s12">
+          <h2>{{ book.title | uppercase }}</h2>
+        </div>
+        <div class="col s6">
+          <div><img src="{{book.cover}}"/></div>
+        </div>
+        <div class="col s6">
+          <div>id: <strong>{{book.id}}</strong></div>
+          <div>Title: <strong>{{book.title}}</strong></div>
+          <div>Author: <strong>{{book.author}}</strong></div>
+          <div>Publication Date: <strong>{{book.publicationDate}}</strong></div>
+          <div>Number of Pages: <strong>{{book.numberOfPages}}</strong></div>
+          <div><a class="btn-floating halfway-fab waves-effect waves-light red" (click)="openDialog()"><i class="material-icons">edit</i></a></div>
+        </div>
+      </div>
     </div>
-    <div>
-      <label>Author:
-        <input [(ngModel)]="book.author" placeholder="author"/>
-      </label>
-    </div>
-    <div>
-      <label>Publication:
-        <input [(ngModel)]="book.publicationDate" placeholder="publicationDate"/>
-      </label>
-    </div>
-    <div>
-      <label>Number of Pages:
-        <input [(ngModel)]="book.numberOfPages" placeholder="numberOfPages"/>
-      </label>
-    </div>
-    <button (click)="goBack()">go back</button>
-    <button (click)="save()">save</button>
   </div>
 </div>
