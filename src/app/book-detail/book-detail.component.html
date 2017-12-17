@@ -1,11 +1,28 @@
-<div *ngIf="book">
-  <h2>{{ book.title | uppercase }} Details</h2>
-  <div><span>id: </span>{{book.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="book.title" placeholder="name"/>
-    </label>
+<div class="continer">
+  <div *ngIf="book">
+    <h2>{{ book.title | uppercase }} || Details</h2>
+    <div><span>id: </span>{{book.id}}</div>
+    <div>
+      <label>Title:
+        <input [(ngModel)]="book.title" placeholder="title"/>
+      </label>
+    </div>
+    <div>
+      <label>Author:
+        <input [(ngModel)]="book.author" placeholder="author"/>
+      </label>
+    </div>
+    <div>
+      <label>Publication:
+        <input [(ngModel)]="book.publicationDate" placeholder="publicationDate"/>
+      </label>
+    </div>
+    <div>
+      <label>Number of Pages:
+        <input [(ngModel)]="book.numberOfPages" placeholder="numberOfPages"/>
+      </label>
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
   </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
 </div>

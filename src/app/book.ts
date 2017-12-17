@@ -4,4 +4,5 @@ export class Book {
   author: string;
   publicationDate: string;
   cover: string;
+  numberOfPages: number;
 }
