@@ -11,7 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {MaterialModule} from './material/material.module';
 
 import {AppComponent} from './app.component';
-import {BookDetailComponent} from './book-detail/book-detail.component';
+import {BookDetailComponent, EditBookDialogComponent} from './book-detail/book-detail.component';
 import {BooksComponent} from './books/books.component';
 import {BookService} from './book.service';
 import {MessageService} from './message.service';
@@ -23,7 +23,9 @@ import {MessagesComponent} from './messages/messages.component';
     BooksComponent,
     BookDetailComponent,
     MessagesComponent,
+    EditBookDialogComponent
   ],
+  entryComponents: [EditBookDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

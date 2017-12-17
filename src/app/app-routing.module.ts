@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {BooksComponent} from './books/books.component';
-import {BookDetailComponent} from './book-detail/book-detail.component';
+import {BookDetailComponent, EditBookDialogComponent} from './book-detail/book-detail.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/books', pathMatch: 'full'},

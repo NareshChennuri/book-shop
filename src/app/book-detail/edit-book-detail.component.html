@@ -1,0 +1,21 @@
+<div *ngIf="data">
+  <div class="row">
+    <div class="col s6">
+      <div>id: <strong>{{data.id}}</strong></div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Title" value="title" [(ngModel)]="data.title"/>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Author" value="author" [(ngModel)]="data.author"/>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Publication date" value="publicationDate" [(ngModel)]="data.publicationDate"/>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Number of pages" value="numberOfPages" [(ngModel)]="data.numberOfPages"/>
+      </mat-form-field>
+      <button mat-button color="primary" (click)="onSaveClick()">Primary</button>
+      <button mat-button (click)="onCancelClick()">Cancel</button>
+    </div>
+  </div>
+</div>
