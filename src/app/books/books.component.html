@@ -3,6 +3,7 @@
     <div class="col s12">
       <mat-paginator [length]="booksCount"
                      [pageSize]="pageSize"
+                     [pageIndex]="pageIndex"
                      [pageSizeOptions]="pageSizeOptions"
                      (page)="pageChanged($event)">
       </mat-paginator>
@@ -34,6 +35,7 @@
   <div class="col s12">
     <mat-paginator [length]="booksCount"
                    [pageSize]="pageSize"
+                   [pageIndex]="pageIndex"
                    [pageSizeOptions]="pageSizeOptions"
                    (page)="pageChanged($event)">
     </mat-paginator>
