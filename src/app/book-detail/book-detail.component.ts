@@ -41,7 +41,7 @@ export class BookDetailComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(EditBookDialogComponent, {
-      width: '400px',
+      width: '350px',
       data: this.book
     });
 

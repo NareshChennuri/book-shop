@@ -71,13 +71,3 @@ button.delete {
   background-color: gray !important;
   color: white;
 }
-
-.bookCover {
-  height: 412px;
-}
-
-@media only screen and (max-width: 600px) {
-  .bookCover {
-    height: 300px !important;
-  }
-}

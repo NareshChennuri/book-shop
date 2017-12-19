@@ -5,7 +5,12 @@
   .container {
     width: 90% !important;
   }
+
+  .bookCover {
+    height: 350px !important;
+  }
 }
+
 @media only screen and (min-width: 993px) {
   .container {
     width: 90% !important;
@@ -14,4 +19,8 @@
 
 .example-full-width {
   width: 100%;
+}
+
+.bookCover {
+  height: 412px;
 }
