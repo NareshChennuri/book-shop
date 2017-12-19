@@ -44,7 +44,7 @@ export class BooksComponent implements OnInit {
 
   pageChanged(event): void {
     this.pageSize = event.pageSize;
-    const pageIndex: number = event.pageIndex;
-    this.getBooksFromTo(pageIndex, this.pageSize);
+    this.pageIndex = event.pageIndex;
+    this.getBooksFromTo(this.pageIndex, this.pageSize);
   }
 }
