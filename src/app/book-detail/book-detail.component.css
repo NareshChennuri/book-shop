@@ -1,4 +1,8 @@
 /* BookDetailComponent's private CSS styles */
+.bookDetailsCard {
+  padding: 30px;
+}
+
 label {
   display: inline-block;
   width: 3em;
