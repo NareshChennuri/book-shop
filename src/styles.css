@@ -24,3 +24,11 @@
 .bookCover {
   height: 412px;
 }
+
+.mat-form-field-infix{
+  padding: 0;
+}
+
+input.mat-input-element {
+  margin: 0;
+}
